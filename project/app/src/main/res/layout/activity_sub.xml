@@ -10,7 +10,7 @@
         android:id="@+id/button_sub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="가입하기"
+        android:text="이주봉 권소영!"
         android:textSize="30dp"
         tools:layout_editor_absoluteX="241dp"
         tools:layout_editor_absoluteY="655dp" />
