@@ -1,4 +1,5 @@
 package com.example.myapplication;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
@@ -6,22 +7,24 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegisterRequest extends StringRequest{
-    final static private String URL = "220.122.46.167/Register.php";
+public class RegisterRequest extends StringRequest {
+
+    //서버 설정 (php파일 연동)
+    final static private String URL = "http://localhost/phpmyadmin/index.php?route=/table/structure&db=user_info&table=user_info/Register.php";
     private Map<String, String> map;
 
-    public RegisterRequest(String userID, String userPassword, String userName, int userAge, Response.Listener<String> listener){
+    public RegisterRequest(String userID, String userPassword, String userName, int userAge, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
-        map = new HashMap<>();
-        map.put("userID",userID);
-        map.put("userPassword",userPassword);
-        map.put("userName",userName);
-        map.put("userAge",userAge + "");
+        map=new HashMap<>();
+        map.put("userID", userID);
+        map.put("userPassword", userPassword);
+        map.put("userName", userName);
+        map.put("userAge", userAge + "");
     }
 
     @Override
-    protected Map<String, String> getParams() throws AuthFailureError {
+    protected Map<String, String> getPostParams() throws AuthFailureError {
         return map;
     }
 }
