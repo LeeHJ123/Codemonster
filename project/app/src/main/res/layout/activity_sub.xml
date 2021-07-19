@@ -13,19 +13,11 @@
         android:layout_marginTop="136dp"
         android:text="회원가입"
         android:textSize="30dp"
-<<<<<<< HEAD
-<<<<<<< HEAD
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="409dp" />
-=======
-=======
-        app:backgroundTint="#AA0F0F"
->>>>>>> a9ec0835f4cf5670ed7dad8050d1ab95be298c24
+        app:backgroundTint="#3F51B5"
         app:layout_constraintEnd_toEndOf="@+id/editText2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editText2"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
->>>>>>> 21f827cdb8744f1981ba8cc88b658a947456fae0
 
     <EditText
         android:id="@+id/editText2"
