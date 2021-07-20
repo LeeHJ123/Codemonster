@@ -10,7 +10,7 @@ import java.util.Map;
 public class LoginRequest extends StringRequest {
 
     //서버 설정 (php파일 연동)
-    final static private String URL = "http://localhost/phpmyadmin/index.php?route=/table/structure&db=user_info&table=user_info/Login.php";
+    final static private String URL = "http://192.168.35.115/Login.php";
     private Map<String, String> map;
 
     public LoginRequest(String userID, String userPassword, Response.Listener<String> listener) {
