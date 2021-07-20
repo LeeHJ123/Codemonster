@@ -10,7 +10,7 @@ import java.util.Map;
 public class RegisterRequest extends StringRequest {
 
     //서버 설정 (php파일 연동)
-    final static private String URL = "http://localhost/phpmyadmin/index.php?route=/table/structure&db=user_info&table=user_info/Register.php";
+    final static private String URL = "http://192.168.35.115/Register.php";
     private Map<String, String> map;
 
     public RegisterRequest(String userID, String userPassword, String userName, int userAge, Response.Listener<String> listener) {
