@@ -22,7 +22,11 @@
         <activity android:name=".HomeActivity">
         </activity>
         <activity android:name=".temp2Acvivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:parentActivityName=".HomeActivity">
+
+        </activity>
         <activity
             android:name=".SubActivity"
             android:parentActivityName=".MainActivity"
