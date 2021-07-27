@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,13 +39,14 @@ public class SubActivity extends AppCompatActivity {
         button_sub=findViewById(R.id.button_sub);
         button_sub.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
                 //EditText에 현재 입력된 값을 가져오는 코드
                 String userID = et_ID.getText().toString();
                 String userPassword = et_Password.getText().toString();
                 String userName = et_Name.getText().toString();
                 int userAge = Integer.parseInt(et_Age.getText().toString());
+                Log.d("test", "registertest");
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override

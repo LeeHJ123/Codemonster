@@ -10,7 +10,7 @@ import java.util.Map;
 public class LoginRequest extends StringRequest {
 
     //서버 설정 (php파일 연동)
-    final static private String URL = "http://192.168.35.115/Login.php";
+    final static private String URL = "http://220.122.46.167:8000/Login.php";
     private Map<String, String> map;
 
     public LoginRequest(String userID, String userPassword, Response.Listener<String> listener) {
@@ -23,7 +23,8 @@ public class LoginRequest extends StringRequest {
     }
 
     @Override
-    protected Map<String, String> getPostParams() throws AuthFailureError {
+    protected Map<String, String> getParams() throws AuthFailureError {
         return map;
     }
+
 }
