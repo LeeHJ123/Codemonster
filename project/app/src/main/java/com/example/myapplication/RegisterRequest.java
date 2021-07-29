@@ -10,7 +10,7 @@ import java.util.Map;
 public class RegisterRequest extends StringRequest {
 
     //서버 설정 (php파일 연동)
-    final static private String URL = "http://220.122.46.167:8000/Register.php";
+    final static private String URL = "http:///220.122.46.167:8000/Register.php";
     private Map<String, String> map;
 
     public RegisterRequest(String userID, String userPassword, String userName, int userAge, Response.Listener<String> listener) {
