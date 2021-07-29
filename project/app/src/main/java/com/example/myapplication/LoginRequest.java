@@ -23,7 +23,7 @@ public class LoginRequest extends StringRequest {
     }
 
     @Override
-    protected Map<String, String> getPostParams() throws AuthFailureError {
+    protected Map<String, String> getParams() throws AuthFailureError {
         return map;
     }
 }
