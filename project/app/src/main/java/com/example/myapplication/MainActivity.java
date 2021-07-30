@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 Toast.makeText(getApplicationContext(), "로그인에 성공하였습니다", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(MainActivity.this, temp2Acvivity.class);
+
                                 intent.putExtra("userID",userID);
                                 intent.putExtra("userPassword",userPassword);
                                 startActivity((intent));
