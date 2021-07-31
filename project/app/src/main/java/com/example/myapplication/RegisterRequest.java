@@ -12,7 +12,11 @@ public class RegisterRequest extends StringRequest {
 
     //서버 설정 (php파일 연동)
 <<<<<<< HEAD
+<<<<<<< HEAD
     final static private String URL = "http:///220.122.46.167:8000/Register.php";
+=======
+    final static private String URL = "http://192.168.35.100/Register.php";
+>>>>>>> run
 =======
     final static private String URL = "http://192.168.35.100/Register.php";
 >>>>>>> run
