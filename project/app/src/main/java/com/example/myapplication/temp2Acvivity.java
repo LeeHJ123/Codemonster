@@ -7,6 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class temp2Acvivity extends AppCompatActivity {
 
@@ -33,9 +41,39 @@ public class temp2Acvivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent=new Intent(temp2Acvivity.this,temp3Activity.class);
-                intent.putExtra("userID",userID);
-                startActivity(intent);
+                //Intent intent=new Intent(temp2Acvivity.this,temp3Activity.class);
+                //intent.putExtra("userID",userID);
+                //startActivity(intent);
+
+
+
+
+                //여기서 내가 만드는거(본식)
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            boolean success = jsonObject.getBoolean("success");
+                            if (success) { //회원가입이 성공할 경우
+                                Intent intent=new Intent(temp2Acvivity.this,temp3Activity.class);
+                                intent.putExtra("userID",userID);
+                                startActivity(intent);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+                    }
+                };
+
+                // 서버로 Volley를 이용해서 요청한다
+                GoRequest goRequest = new  GoRequest(userID, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(temp2Acvivity.this);
+                queue.add(goRequest);
+
+
             }
         });
 
