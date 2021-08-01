@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class GoRequest extends StringRequest {
     //서버 설정 (php파일 연동)
-    final static private String URL = "http:///220.122.46.167:8000/go.php";
+    final static private String URL = "http://192.168.35.100/go.php"; //220.122.46.167:8000
     private Map<String, String> map;
 
     public GoRequest(String userID ,Response.Listener<String> listener){
@@ -17,6 +17,7 @@ public class GoRequest extends StringRequest {
         super(Method.POST, URL, listener, null);
 
         map=new HashMap<>();
+        map.put("userID", userID);
 
     }
     @Override

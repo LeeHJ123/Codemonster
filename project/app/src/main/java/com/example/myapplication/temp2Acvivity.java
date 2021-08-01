@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -49,18 +50,20 @@ public class temp2Acvivity extends AppCompatActivity {
 
 
                 //여기서 내가 만드는거(본식)
+                //String userID = tv_id.getText().toString();
+
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            boolean success = jsonObject.getBoolean("success");
-                            if (success) { //회원가입이 성공할 경우
-                                Intent intent=new Intent(temp2Acvivity.this,temp3Activity.class);
-                                intent.putExtra("userID",userID);
-                                startActivity(intent);
-                            }
-                        } catch (JSONException e) {
+                            //JSONObject jsonObject = new JSONObject(response);
+                            //boolean success = jsonObject.getBoolean("success");
+                            Intent intent=new Intent(temp2Acvivity.this,temp3Activity.class);
+                            intent.putExtra("userID",userID);
+                            startActivity(intent);
+
+
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
 
